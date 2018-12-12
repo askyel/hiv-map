@@ -1,3 +1,6 @@
+#!/usr/bin/python
+print "Content-type: text/html\n"
+print """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,95 +137,95 @@ body {
 <h1>Rates of Adult HIV Infection in the United States</h1>
 
 <div id="menu">
-<div class="option" id="percentChangeRate" onClick="updateDataChangeFeature('percentChangeRate')">% Change</div>
-<div class="option" id="adultRate2017" onClick="updateDataChangeFeature('adultRate2017')">2017</div>
-<div class="option" id="adultRate2016" onClick="updateDataChangeFeature('adultRate2016')">2016</div>
-<div class="option" id="adultRate2015" onClick="updateDataChangeFeature('adultRate2015')">2015</div>
-<div class="option" id="adultRate2014" onClick="updateDataChangeFeature('adultRate2014')">2014</div>
-<div class="option" id="adultRate2013" onClick="updateDataChangeFeature('adultRate2013')">2013</div>
-<div class="option" id="adultRate2012" onClick="updateDataChangeFeature('adultRate2012')">2012</div>
-<div class="option" id="adultRate2011" onClick="updateDataChangeFeature('adultRate2011')">2011</div>
-<div class="option" id="adultRate2010" onClick="updateDataChangeFeature('adultRate2010')">2010</div>
+<div class="option" id="percentChangeRate" onClick="updateData('percentChangeRate', [])">% Change</div>
+<div class="option" id="adultRate2017" onClick="updateData('adultRate2017', {})">2017</div>
+<div class="option" id="adultRate2016" onClick="updateData('adultRate2016', {})">2016</div>
+<div class="option" id="adultRate2015" onClick="updateData('adultRate2015', {})">2015</div>
+<div class="option" id="adultRate2014" onClick="updateData('adultRate2014', {})">2014</div>
+<div class="option" id="adultRate2013" onClick="updateData('adultRate2013', {})">2013</div>
+<div class="option" id="adultRate2012" onClick="updateData('adultRate2012', {})">2012</div>
+<div class="option" id="adultRate2011" onClick="updateData('adultRate2011', {})">2011</div>
+<div class="option" id="adultRate2010" onClick="updateData('adultRate2010', {})">2010</div>
 </div>
 
 <div id="filters">
   <table>
     <tr>
       <th>Sex Education Mandated</th>
-      <td id="sexEducationMandated:X" onClick="updateDataAddFilter({'name':'sexEducationMandated', 'value':'X'})">True</td>
-      <td id="sexEducationMandated:" onClick="updateDataAddFilter({'name':'sexEducationMandated', 'value':''})">False</td>
+      <td id="sexEducationMandated:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexEducationMandated', 'value':'X'})">True</td>
+      <td id="sexEducationMandated:" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexEducationMandated', 'value':''})">False</td>
     </tr>
     <tr>
       <th>HIV Education Mandated</th>
-      <td id="hivEducationMandated:X" onClick="updateDataAddFilter({'name':'hivEducationMandated', 'value':'X'})">True</td>
-      <td id="hivEducationMandated:" onClick="updateDataAddFilter({'name':'hivEducationMandated', 'value':''})">False</td>
+      <td id="hivEducationMandated:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivEducationMandated', 'value':'X'})">True</td>
+      <td id="hivEducationMandated:" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivEducationMandated', 'value':''})">False</td>
     </tr>
     <tr>
       <th>Medically Accurate</th>
-      <td id="educationMedicallyAccurate:X" onClick="updateDataAddFilter({'name':'educationMedicallyAccurate', 'value':'X'})">True</td>
-      <td id="educationMedicallyAccurate:" onClick="updateDataAddFilter({'name':'educationMedicallyAccurate', 'value':''})">False</td>
+      <td id="educationMedicallyAccurate:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'educationMedicallyAccurate', 'value':'X'})">True</td>
+      <td id="educationMedicallyAccurate:" onClick="updateDataAddFilter('percentChangeRate', {'name':'educationMedicallyAccurate', 'value':''})">False</td>
     </tr>
     <tr>
       <th>Culturally Unbiased</th>
-      <td id="educationUnbiased:X" onClick="updateDataAddFilter({'name':'educationUnbiased', 'value':'X'})">True</td>
-      <td id="educationUnbiased:" onClick="updateDataAddFilter({'name':'educationUnbiased', 'value':''})">False</td>
+      <td id="educationUnbiased:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'educationUnbiased', 'value':'X'})">True</td>
+      <td id="educationUnbiased:" onClick="updateDataAddFilter('percentChangeRate', {'name':'educationUnbiased', 'value':''})">False</td>
     </tr>
     <tr>
       <th>Parental Notice</th>
-      <td id="parentalNotice:X" onClick="updateDataAddFilter({'name':'parentalNotice', 'value':'X'})">True</td>
-      <td id="parentalNotice:" onClick="updateDataAddFilter({'name':'parentalNotice', 'value':''})">False</td>
-      <td id="parentalNotice:HIV" onClick="updateDataAddFilter({'name':'parentalNotice', 'value':'HIV'})">HIV Only</td>
+      <td id="parentalNotice:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalNotice', 'value':'X'})">True</td>
+      <td id="parentalNotice:" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalNotice', 'value':''})">False</td>
+      <td id="parentalNotice:HIV" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalNotice', 'value':'HIV'})">HIV Only</td>
     </tr>
     <tr>
       <th>Parental Consent</th>
-      <td id="parentalConsent:X" onClick="updateDataAddFilter({'name':'parentalConsent', 'value':'X'})">True</td>
-      <td id="parentalConsent:" onClick="updateDataAddFilter({'name':'parentalConsent', 'value':''})">False</td>
-      <td id="parentalConsent:Sex" onClick="updateDataAddFilter({'name':'parentalConsent', 'value':'Sex'})">Sex Only</td>
+      <td id="parentalConsent:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalConsent', 'value':'X'})">True</td>
+      <td id="parentalConsent:" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalConsent', 'value':''})">False</td>
+      <td id="parentalConsent:Sex" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalConsent', 'value':'Sex'})">Sex Only</td>
     </tr>
     <tr>
       <th>Parental Opt-Out</th>
-      <td id="parentalOptOut:X" onClick="updateDataAddFilter({'name':'parentalOptOut', 'value':'X'})">True</td>
-      <td id="parentalOptOut:" onClick="updateDataAddFilter({'name':'parentalOptOut', 'value':''})">False</td>
-      <td id="parentalOptOut:HIV" onClick="updateDataAddFilter({'name':'parentalOptOut', 'value':'HIV'})">HIV Only</td>
+      <td id="parentalOptOut:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalOptOut', 'value':'X'})">True</td>
+      <td id="parentalOptOut:" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalOptOut', 'value':''})">False</td>
+      <td id="parentalOptOut:HIV" onClick="updateDataAddFilter('percentChangeRate', {'name':'parentalOptOut', 'value':'HIV'})">HIV Only</td>
     </tr>
     <tr>
       <th>Contraceptive</th>
-      <td id="sexContraception:X" onClick="updateDataAddFilter({'name':'sexContraception', 'value':'X'})">True</td>
-      <td id="sexContraception:" onClick="updateDataAddFilter({'name':'sexContraception', 'value':''})">False</td>
+      <td id="sexContraception:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexContraception', 'value':'X'})">True</td>
+      <td id="sexContraception:" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexContraception', 'value':''})">False</td>
     </tr>
     <tr>
       <th>Abstinence</th>
-      <td id="sexAbstinence:Stress" onClick="updateDataAddFilter({'name':'sexAbstinence', 'value':'Stress'})">Stress</td>
-      <td id="sexAbstinence:Cover" onClick="updateDataAddFilter({'name':'sexAbstinence', 'value':'Cover'})">Cover</td>
-      <td id="sexAbstinence:" onClick="updateDataAddFilter({'name':'sexAbstinence', 'value':''})">None</td>
+      <td id="sexAbstinence:Stress" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexAbstinence', 'value':'Stress'})">Stress</td>
+      <td id="sexAbstinence:Cover" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexAbstinence', 'value':'Cover'})">Cover</td>
+      <td id="sexAbstinence:" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexAbstinence', 'value':''})">None</td>
     </tr>
     <tr>
       <th>Sex Within Marriage</th>
-      <td id="sexWithinMarriage:X" onClick="updateDataAddFilter({'name':'sexWithinMarriage', 'value':'X'})">True</td>
-      <td id="sexWithinMarriage:" onClick="updateDataAddFilter({'name':'sexWithinMarriage', 'value':''})">False</td>
+      <td id="sexWithinMarriage:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexWithinMarriage', 'value':'X'})">True</td>
+      <td id="sexWithinMarriage:" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexWithinMarriage', 'value':''})">False</td>
     </tr>
     <tr>
       <th>Sexual Orientation</th>
-      <td id="sexualOrientation:Inclusive" onClick="updateDataAddFilter({'name':'sexualOrientation', 'value':'Inclusive'})">Inclusive</td>
-      <td id="sexualOrientation:Negative" onClick="updateDataAddFilter({'name':'sexualOrientation', 'value':'Negative'})">Negative</td>
-      <td id="sexualOrientation:HIV Related" onClick="updateDataAddFilter({'name':'sexualOrientation', 'value':'HIV Related'})">HIV Related</td>
-      <td id="sexualOrientation:" onClick="updateDataAddFilter({'name':'sexualOrientation', 'value':''})">None</td>
+      <td id="sexualOrientation:Inclusive" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexualOrientation', 'value':'Inclusive'})">Inclusive</td>
+      <td id="sexualOrientation:Negative" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexualOrientation', 'value':'Negative'})">Negative</td>
+      <td id="sexualOrientation:HIV Related" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexualOrientation', 'value':'HIV Related'})">HIV Related</td>
+      <td id="sexualOrientation:" onClick="updateDataAddFilter('percentChangeRate', {'name':'sexualOrientation', 'value':''})">None</td>
     </tr>
     <tr>
       <th>Healthy Decision Making</th>
-      <td id="healthyDecisionMaking:X" onClick="updateDataAddFilter({'name':'healthyDecisionMaking', 'value':'X'})">True</td>
-      <td id="healthyDecisionMaking:" onClick="updateDataAddFilter({'name':'healthyDecisionMaking', 'value':''})">False</td>
+      <td id="healthyDecisionMaking:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'healthyDecisionMaking', 'value':'X'})">True</td>
+      <td id="healthyDecisionMaking:" onClick="updateDataAddFilter('percentChangeRate', {'name':'healthyDecisionMaking', 'value':''})">False</td>
     </tr>
     <tr>
       <th>HIV: Condoms</th>
-      <td id="hivCondoms:X" onClick="updateDataAddFilter({'name':'hivCondoms', 'value':'X'})">True</td>
-      <td id="hivCondoms:" onClick="updateDataAddFilter({'name':'hivCondoms', 'value':''})">False</td>
+      <td id="hivCondoms:X" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivCondoms', 'value':'X'})">True</td>
+      <td id="hivCondoms:" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivCondoms', 'value':''})">False</td>
     </tr>
     <tr>
       <th>HIV: Abstinence</th>
-      <td id="hivAbstinence:Stress" onClick="updateDataAddFilter({'name':'hivAbstinence', 'value':'Stress'})">Stress</td>
-      <td id="hivAbstinence:Cover" onClick="updateDataAddFilter({'name':'hivAbstinence', 'value':'Cover'})">Cover</td>
-      <td id="hivAbstinence:" onClick="updateDataAddFilter({'name':'hivAbstinence', 'value':''})">None</td>
+      <td id="hivAbstinence:Stress" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivAbstinence', 'value':'Stress'})">Stress</td>
+      <td id="hivAbstinence:Cover" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivAbstinence', 'value':'Cover'})">Cover</td>
+      <td id="hivAbstinence:" onClick="updateDataAddFilter('percentChangeRate', {'name':'hivAbstinence', 'value':''})">None</td>
     </tr>
   </table>
 </div>
@@ -284,18 +287,11 @@ var div = d3.select("body")
     		.attr("class", "tooltip")
     		.style("opacity", 0);
 
-var globalFeature = 'percentChangeRate';
 var globalFilters = {};
 
-function updateDataChangeFeature(feature) {
-  globalFeature = feature;
-  globalFilters = {};
-  updateData(globalFeature, globalFilters);
-}
-
-function updateDataAddFilter(filter) {
+function updateDataAddFilter(feature, filter) {
   globalFilters[filter.name] = filter.value;
-  updateData(globalFeature, globalFilters);
+  updateData(feature, globalFilters);
 }
 
 function updateData(feature, filters) {
@@ -354,25 +350,17 @@ function updateData(feature, filters) {
       // sort by value descending
       .sort(function(a, b) { return d3.ascending(a.value[feature], b.value[feature]); });
 
-    if (feature === 'percentChangeRate') {
-      var positiveCount = sorted
-        .filter(function(d) { return d.value[feature] > 0; })
-        .length;
+    var positiveCount = sorted
+      .filter(function(d) { return d.value[feature] > 0; })
+      .length;
 
-      var negativeCount = sorted
-        .filter(function(d) { return d.value[feature] < 0; })
-        .length;
+    var negativeCount = sorted
+      .filter(function(d) { return d.value[feature] < 0; })
+      .length;
 
-      summary.append("l").text("Negative: " + negativeCount);
-      summary.append("l").text("Positive: " + positiveCount);
-      summary.append("l").text("Ratio -/+: " + (negativeCount/positiveCount).toFixed(2));
-    } else {
-      var overallRate = data[51][feature];
-      var currentRate = sorted.reduce(function(total, d) {
-        return total + d.value[feature];
-      }, 0) / sorted.length;
-      console.log(overallRate, currentRate);
-    }
+    summary.append("l").text("Negative: " + negativeCount);
+    summary.append("l").text("Positive: " + positiveCount);
+    summary.append("l").text("Ratio -/+: " + (negativeCount/positiveCount).toFixed(2));
 
     for (var i = 0; i < sorted.length && i < 5; i++) {
       topStates
@@ -439,7 +427,7 @@ function updateData(feature, filters) {
       .on("mouseover", function(d) {
         var label = d.properties.name;
         if (feature === 'percentChangeRate') {
-          label += " (" + d.properties.oldestYear + " – 2017): ";
+          label += " (" + d.properties.oldestYear + " - 2017): ";
         } else {
           label += ": ";
         }
@@ -565,3 +553,4 @@ updateData("percentChangeRate", {});
 
 </body>
 </html>
+"""
